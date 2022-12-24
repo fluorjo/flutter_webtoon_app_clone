@@ -29,19 +29,22 @@ class Webtoon extends StatelessWidget {
       //route=statelesswidget을 애니메이션 효과로 감싸서 스크린처럼 보이게 한다.
       child: Column(
         children: [
-          Container(
-            width: 200,
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 15,
-                    offset: const Offset(10, 10),
-                    color: Colors.black.withOpacity(0.5),
-                  )
-                ]),
-            child: Image.network(thumb),
+          Hero(
+            tag: id,
+            child: Container(
+              width: 200,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 15,
+                      offset: const Offset(10, 10),
+                      color: Colors.black.withOpacity(0.5),
+                    )
+                  ]),
+              child: Image.network(thumb),
+            ),
           ),
           const SizedBox(
             height: 10,
